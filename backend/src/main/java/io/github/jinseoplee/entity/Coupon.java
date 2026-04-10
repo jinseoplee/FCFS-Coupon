@@ -1,5 +1,7 @@
 package io.github.jinseoplee.entity;
 
+import io.github.jinseoplee.exception.BusinessException;
+import io.github.jinseoplee.exception.ErrorCode;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -30,5 +32,12 @@ public class Coupon extends BaseTimeEntity {
 
     public static Coupon create(String title, int totalQuantity) {
         return new Coupon(title, totalQuantity);
+    }
+
+    public void issue() {
+        if (this.issuedQuantity >= this.totalQuantity) {
+            throw new BusinessException(ErrorCode.COUPON_EXHAUSTED);
+        }
+        this.issuedQuantity++;
     }
 }
