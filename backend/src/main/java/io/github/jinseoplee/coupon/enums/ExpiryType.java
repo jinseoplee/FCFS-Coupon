@@ -1,4 +1,4 @@
-package io.github.jinseoplee.coupon.entity;
+package io.github.jinseoplee.coupon.enums;
 
 public enum ExpiryType {
     FIXED,

@@ -1,6 +1,8 @@
 package io.github.jinseoplee.coupon.entity;
 
 import io.github.jinseoplee.common.entity.BaseTimeEntity;
+import io.github.jinseoplee.coupon.enums.CouponStatus;
+import io.github.jinseoplee.coupon.enums.ExpiryType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
